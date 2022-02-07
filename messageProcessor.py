@@ -50,7 +50,7 @@ class MessageProcessor():
         else:
             return self.randomize_answer()
 
-    def randomize_answer():
+    def randomize_answer(self):
         res = ""
         if len(MessageProcessor.memory["relation"]) > 0:
             relation = MessageProcessor.memory["relation"].pop(0)
@@ -64,3 +64,5 @@ class MessageProcessor():
         else:
             res += np.random.choice(
                 ANSWER_TEMPLATES["default_endings"], 1)[0]
+
+        return res
