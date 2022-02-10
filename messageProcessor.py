@@ -38,14 +38,14 @@ class MessageProcessor():
         elif message.question_mark:
             answer += np.random.choice(
                 ANSWER_TEMPLATES["question_mark"], 1)[0]
-            return answer + self.randomize_answer
+            return answer + self.randomize_answer()
 
         elif message.is_short:
             return np.random.choice(ANSWER_TEMPLATES["short"], 1)[0]
 
         elif message.is_long:
             answer += np.random.choice(ANSWER_TEMPLATES["long"], 1)[0]
-            return answer + self.randomize_answer
+            return answer + self.randomize_answer()
 
         else:
             return self.randomize_answer()
